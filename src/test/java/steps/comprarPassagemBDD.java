@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -40,30 +39,31 @@ public class comprarPassagemBDD {
         driver.get(url);
     }
 
-    @Quando("escolho origem {string} e destino {string}")
-    public void escolho_origem_e_destino(String origem, String destino) {
+    @Quando("seleciono a origem {string} e destino {string}")
+    @Quando("seleciono a {string} e {string}")
+    public void seleciono_origem_e_destino(String origem, String destino) {
         {
             this.origem = origem;
             WebElement campoOrigem = driver.findElement(By.name("fromPort"));
             campoOrigem.click();
-            campoOrigem.findElement(By.xpath("//option[. = '" + origem + "'']")).click();
+            campoOrigem.findElement(By.xpath("//option[. = '" + origem + "']")).click();
         }
 
         {
             this.destino = destino;
             WebElement campoDestino = driver.findElement(By.name("toPort"));
             campoDestino.click();
-            campoDestino.findElement(By.xpath("//option[. = '" + destino + "'']")).click();
+            campoDestino.findElement(By.xpath("//option[. = '" + destino + "']")).click();
         }
     }
 
-    @E("clico no botão {string}")
+    @Quando("clico no botao {string}")
     public void clico_no_botão(String string) {
         driver.findElement(By.cssSelector(".btn-primary")).click();
     }
 
     @Entao("visualizo a lista de voos")
     public void visualizo_a_lista_de_voos() {
-        assertEquals("Flights from" + origem + " to " + destino + ":",  driver.findElement(By.cssSelector("h3")).getText());
+        assertEquals("Flights from " + origem + " to " + destino + ":", driver.findElement(By.cssSelector("h3")).getText());
     }
 }
