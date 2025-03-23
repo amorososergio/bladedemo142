@@ -9,5 +9,9 @@ public class commonPage {
     public commonPage(WebDriver driver) {
         this.driver = driver;
     }
+
+    public String lerNomeDaGuia() {
+        return driver.getTitle();
+     }	
     
 }

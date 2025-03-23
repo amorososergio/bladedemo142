@@ -13,7 +13,7 @@ public class homePage extends commonPage {
         PageFactory.initElements(driver, this);
     }
 
-    public By byLocal (String local) {
+    public By byLocal(String local) {
         return By.cssSelector("option[value=\"" + local + "\"]");
     }
 
@@ -26,7 +26,11 @@ public class homePage extends commonPage {
     }
 
     public void clicarBotaoFindFlights() {
-        btnFindFlights.click();        
+        btnFindFlights.click();
     }
 
+    public void acessarHomePage(String url) {
+        driver.get(url);
+    }
+  
 }
