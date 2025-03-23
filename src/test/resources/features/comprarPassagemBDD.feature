@@ -48,3 +48,6 @@ Funcionalidade: Comprar Passagem
         | "cliente@iterasys.com.br" | 123456    |    P   |  Login com sucesso    |
         | "cliente@iterasys.com.br" | 123       |    N   |  login não efetuado   |
         | "teste  @iterasys.com.br" | 123456    |    N   |  login não efetuado   |
+
+
+

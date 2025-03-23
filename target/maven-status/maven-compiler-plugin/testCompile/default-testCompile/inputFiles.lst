@@ -1,2 +1,7 @@
 C:\iterasys\bladedemo142\src\test\java\comprarPassagemTeste.java
+C:\iterasys\bladedemo142\src\test\java\pages\base.java
+C:\iterasys\bladedemo142\src\test\java\pages\commonPage.java
+C:\iterasys\bladedemo142\src\test\java\pages\homePage.java
+C:\iterasys\bladedemo142\src\test\java\pages\reservePage.java
 C:\iterasys\bladedemo142\src\test\java\steps\comprarPassagemBDD.java
+C:\iterasys\bladedemo142\src\test\java\stepsPO\comprarPassagemPO.java

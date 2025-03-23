@@ -53,6 +53,3 @@ public class comprarPassagemTeste {
     driver.findElement(By.cssSelector(".btn-primary")).click();
   }
 }
-
-
-        //mvn clean test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features="src/test/resources/features"

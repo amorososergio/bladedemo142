@@ -17,8 +17,16 @@ public class homePage extends commonPage {
         return By.cssSelector("option[value=\"" + local + "\"]");
     }
 
-@FindBy(css = "input[value]")
-WebElement btnFindFlights;
+    @FindBy(css = ".btn-primary")
+    WebElement btnFindFlights;
 
-    
+    public void selecionarOrigemDestino(String byOrigem, String byDestino) {
+        driver.findElement(byLocal(byOrigem)).click();
+        driver.findElement(byLocal(byDestino)).click();
+    }
+
+    public void clicarBotaoFindFlights() {
+        btnFindFlights.click();        
+    }
+
 }

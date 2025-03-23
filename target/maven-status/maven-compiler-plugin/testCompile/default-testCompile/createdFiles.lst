@@ -1,2 +1,7 @@
+pages\homePage.class
 steps\comprarPassagemBDD.class
+pages\commonPage.class
 comprarPassagemTeste.class
+pages\reservePage.class
+stepsPO\comprarPassagemPO.class
+pages\base.class
