@@ -17,7 +17,7 @@ public class homePage extends commonPage {
         return By.cssSelector("option[value=\"" + local + "\"]");
     }
 
-    @FindBy(css = ".btn-primary")
+    @FindBy(css= ".btn-primary")
     WebElement btnFindFlights;
 
     public void selecionarOrigemDestino(String byOrigem, String byDestino) {

@@ -12,7 +12,7 @@ public class reservePage extends commonPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "h3")
+    @FindBy(css ="h3")
     WebElement flightsHeader;
 
     public String lerCabecalhoVoos() {
