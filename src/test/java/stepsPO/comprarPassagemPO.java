@@ -36,18 +36,45 @@ public class comprarPassagemPO {
         this.origem = origem;
         this.destino = destino;
         homePage.selecionarOrigemDestino(origem, destino);
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (InterruptedException e) {
+            }
+        }
     }
 
     @E("clico no botao Find Flights PO")
     public void clico_no_botao_find_flights_po() {
         homePage.clicarBotaoFindFlights();
         reservePage = new reservePage(driver);
+
     }
 
     @Entao("visualizo a lista de voos PO")
     public void visualizo_a_lista_de_voos_po() {
         assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
         assertEquals("Flights from " + origem + " to " + destino + ":", reservePage.lerCabecalhoVoos());
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (InterruptedException e) {
+            }
+        }
+    }
+
+    @Quando("clico no {int} PO")
+    public void clico_no_po(Integer ordem_do_voo) {
+        reservePage.clicarNoVoo(ordem_do_voo);
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (InterruptedException e) {
+            }
+        }
     }
 
 }
